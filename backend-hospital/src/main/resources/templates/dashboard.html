@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Panel del Médico</title>
+</head>
+<body>
+<h1>Bienvenido, <span th:text="${medico.nombreCompleto}"></span></h1>
+<p>Especialidad: <span th:text="${medico.especialidad}"></span></p>
+
+<hr>
+
+<h2>Acciones disponibles</h2>
+<ul>
+    <li><a th:href="@{/pacientes/nuevo}">Registrar nuevo paciente</a></li>
+    <li><a th:href="@{/consultas/nueva}">Registrar nueva consulta</a></li>
+    <li><a th:href="@{/reportes/informe}">Generar informe médico</a></li>
+    <li><a th:href="@{/reportes/estadisticas}">Ver estadísticas</a></li>
+</ul>
+</body>
+</html>

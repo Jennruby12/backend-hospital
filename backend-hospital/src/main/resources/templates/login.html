@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login y Registro</title>
+</head>
+<body>
+
+<h1>Registro de Médico</h1>
+<form th:action="@{/registro}" method="post">
+    <label>Nombre:</label>
+    <input type="text" name="nombreCompleto" required><br>
+
+    <label>Especialidad:</label>
+    <input type="text" name="especialidad" required><br>
+
+    <label>Número de Licencia:</label>
+    <input type="text" name="numeroLicencia" required><br>
+
+    <label>Fecha de Ingreso:</label>
+    <input type="date" name="fechaIngreso" required><br>
+
+    <label>ID Departamento:</label>
+    <input type="number" name="departamentoId" required><br>
+
+    <label>Email:</label>
+    <input type="email" name="emailContacto" required><br>
+
+    <label>Contraseña:</label>
+    <input type="password" name="contrasena" required><br>
+
+    <button type="submit">Registrarse</button>
+</form>
+
+<br><hr><br>
+
+<h1>Iniciar Sesión</h1>
+<form th:action="@{/login}" method="post">
+    <label>Email:</label>
+    <input type="email" name="emailContacto" required><br>
+
+    <label>Contraseña:</label>
+    <input type="password" name="contrasena" required><br>
+
+    <button type="submit">Iniciar Sesión</button>
+</form>
+
+<!-- Mensajes -->
+<p th:if="${registroExitoso}" th:text="${registroExitoso}" style="color:green;"></p>
+<p th:if="${error}" th:text="${error}" style="color:red;"></p>
+
+</body>
+</html>
